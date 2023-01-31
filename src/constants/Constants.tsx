@@ -115,3 +115,5 @@ export const textLinks = [
         'Test new features',
     ],
 ]
+
+export const YOUTUBE_API_URL = 'https://youtube.googleapis.com/youtube/v3'

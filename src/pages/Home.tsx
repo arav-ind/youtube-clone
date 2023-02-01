@@ -32,19 +32,21 @@ const Home = () => {
             <div className='flex h-[92vh]'>
                 <Sidebar />
                 {videos.length ? (
-                    <InfiniteScroll
-                        dataLength={videos.length}
-                        next={() => dispatch(getHomePageVideos(true))}
-                        hasMore={videos.length < 500}
-                        loader={<Spinner />}
-                        height={650}
-                    >
-                        <div className='grid gap-y-14 gap-x-8 grid-cols-4 p-8'>
-                            {videos.map((item: HomePageVideos) => (
-                                <Card key={item.videoId} data={item} />
-                            ))}
-                        </div>
-                    </InfiniteScroll>
+                    <div className='w-full'>
+                        <InfiniteScroll
+                            dataLength={videos.length}
+                            next={() => dispatch(getHomePageVideos(true))}
+                            hasMore={videos.length < 500}
+                            loader={<Spinner />}
+                            height={650}
+                        >
+                            <div className='grid gap-y-14 gap-x-8 grid-cols-4 p-8'>
+                                {videos.map((item: HomePageVideos) => (
+                                    <Card key={item.videoId} data={item} />
+                                ))}
+                            </div>
+                        </InfiniteScroll>
+                    </div>
                 ) : (
                     <Spinner />
                 )}

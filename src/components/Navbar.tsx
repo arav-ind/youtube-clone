@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className='flex gap-5 items-center text-xl'>
                 <BsCameraVideo />
                 <IoMdApps />
-                <Notification />
+                <Notification numberOfNotifications={0} />
                 <UserInfo />
             </div>
         </div>
